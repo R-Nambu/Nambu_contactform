@@ -19,8 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     // echo $timing;
 
 
-    // $stmt =$dbh->prepare('INSERT INTO account(product, reason, buyer, price, content, timing) VALUES (?,?,?,?,?,?)');
-    // $stmt ->execute([$product, $reason, $buyer, $price, $content, $timing]);
+    $stmt =$dbh->prepare('INSERT INTO account(product, reason, buyer, price, content, timing) VALUES (?,?,?,?,?,?)');
+    $stmt ->execute([$product, $reason, $buyer, $price, $content, $timing]);
     
 ?>
 
