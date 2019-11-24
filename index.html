@@ -7,18 +7,20 @@
 
   <!-- style -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1 class="text-center">南部家の支出記録 @Cebu</h1>
   <div class="container col-5">
+  <h1 class="text-center">南部家の支出記録 @Cebu</h1>
 
     <form method="POST" action="check.php">
       
       
       <!-- 購入品名 -->
-      <div class="container mt-5">
-        購入品名<br>
+      <div class="container mt-4">
+        買ったもの<br>
         <input type="text" name="product">
       </div>
       
@@ -26,13 +28,14 @@
       <!-- 購入理由 -->
       <div class="container mt-4">
         <div class="form-group">
-          <label for="exampleFormControlSelect1">購入理由</label>
-          <select class="form-control" id="exampleFormControlSelect1" name="reason">
+          <label for="exampleFormControlSelect1">内容</label>
+          <select class="form-control col-10" id="exampleFormControlSelect1" name="reason">
             <option>食事</option>
             <option>生活用品（ティッシュ、トイレットペーパーなど）</option>
             <option>クリーニング代</option>
             <option>交通費</option>
             <option>レジャー</option>
+            <option>お土産</option>
           </select>
         </div>
       </div>
@@ -41,8 +44,7 @@
       <!-- 購入者 -->
       <div class="container mt-4">
         <fieldset class="form-group">
-          <div class="row">
-            <legend class="col-form-label col-sm-2 pt-0">購入者</legend>
+            <legend class="col-form-label">買った人</legend>
             <div class="col-sm-10">
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="buyer" value="遼" checked>
@@ -56,7 +58,6 @@
                 <input class="form-check-input" type="radio" name="buyer" value="2人とも">
                 2人とも
               </div>
-            </div>
           </div>
         </fieldset>
       </div>
@@ -64,19 +65,19 @@
       <!-- 購入金額 -->
       <div class="container mt-4">
         金額（ペソ）<br>
-        <input type="text" name="price">ペソ
+        <input type="text" name="price">
       </div>
       
       
       <!-- 任意コメント -->
       <div class="container mt-4">
         コメント（任意）<br>
-        <textarea name="content"></textarea>
+        <textarea class="col-10" name="content"></textarea>
       </div>
       
       
       <!-- 送信ボタン -->
-      <div class="container">
+      <div class="container mt-3">
         <input type="submit" value="送信">
       </div>
       

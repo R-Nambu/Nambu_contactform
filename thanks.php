@@ -29,7 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 <head>
     <title>送信完了</title>
     <meta charset="utf-8">
-
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>登録完了！</h1>

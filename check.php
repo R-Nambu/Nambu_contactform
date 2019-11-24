@@ -24,21 +24,21 @@ $content = $_POST['content'];
 
 
 if ($product == '') {
-    $product_result = '品名が入力されていません。';
+    $product_result = '買ったものが入力されていません。';
 } else {
-    $product_result = '品名：' . $product;
+    $product_result = '買ったもの：' . $product;
 }
 
 if ($reason == '') {
-    $reason_result = '購入理由が選択されていません。';
+    $reason_result = '内容が選択されていません。';
 } else {
-    $reason_result = '購入理由：' . $reason;
+    $reason_result = '内容：' . $reason;
 }
 
 if ($buyer == '') {
-    $buyer_result = '購入者が選択されていません。';
+    $buyer_result = '買った人が選択されていません。';
 } else {
-    $buyer_result = '購入者：' . $buyer;
+    $buyer_result = '買った人：' . $buyer;
 }
 
 if ($price == '') {
@@ -48,9 +48,9 @@ if ($price == '') {
 }
 
 if ($content == '') {
-    $content_result = '特記事項：とくになし';
+    $content_result = 'コメント：とくになし';
 } else {
-    $content_result = '特記事項：' .$content;
+    $content_result = 'コメント：' .$content;
 }
 
 ?>
@@ -61,30 +61,35 @@ if ($content == '') {
 <head>
     <title>入力内容確認</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>入力内容確認</h1>
-    <p><?php echo h($product_result); ?></p>
-    <p><?php echo h($reason_result); ?></p>
-    <p><?php echo h($buyer_result); ?></p>
-    <p><?php echo h($price_result); ?></p>
-    <p><?php echo h($content_result); ?></p>
+    <div class="container">
 
-    <form method="POST" action="thanks.php">
-        <input type="hidden" name="product" value="<?php echo h($product); ?>">
-        <input type="hidden" name="reason" value="<?php echo h($reason); ?>">
-        <input type="hidden" name="buyer" value="<?php echo h($buyer); ?>">
-        <input type="hidden" name="price" value="<?php echo h($price); ?>">
-        <input type="hidden" name="content" value="<?php echo h($content); ?>">
+        <h1>入力内容確認</h1>
+        <p><?php echo h($product_result); ?></p>
+        <p><?php echo h($reason_result); ?></p>
+        <p><?php echo h($buyer_result); ?></p>
+        <p><?php echo h($price_result); ?></p>
+        <p><?php echo h($content_result); ?></p>
         
-        <!-- 戻るボタン -->
-        <button type="button" onclick="history.back()">戻る</button>
-
-        <!-- コメント以外の全ての入力が整っているときのみ、次のページへ進むボタンが表示される -->
-        <?php if($product != '' && $reason != '' && $buyer != '' && $price != ''): ?>
-        <button>OK</button>
-        <?php endif; ?>
-    </form>
-</body>
-</html>
+        <form method="POST" action="thanks.php">
+            <input type="hidden" name="product" value="<?php echo h($product); ?>">
+            <input type="hidden" name="reason" value="<?php echo h($reason); ?>">
+            <input type="hidden" name="buyer" value="<?php echo h($buyer); ?>">
+            <input type="hidden" name="price" value="<?php echo h($price); ?>">
+            <input type="hidden" name="content" value="<?php echo h($content); ?>">
+            
+            <!-- 戻るボタン -->
+            <button type="button" onclick="history.back()">戻る</button>
+            
+            <!-- コメント以外の全ての入力が整っているときのみ、次のページへ進むボタンが表示される -->
+            <?php if($product != '' && $reason != '' && $buyer != '' && $price != ''): ?>
+            <button>OK</button>
+            <?php endif; ?>
+        </form>
+    </div>
+    </body>
+    </html>
